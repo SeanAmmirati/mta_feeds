@@ -35,7 +35,7 @@ def download_rideinf():
         zipped.extractall('../../data/mta_info') 
 
 
-def run_through_all_trains():
+def run_through_trains(feed_ids=[1, 26, 16, 21, 2, 11, 31, 36, 51]):
     df_list = []
     for feed in feed_ids:
         fd_st = str(feed)
