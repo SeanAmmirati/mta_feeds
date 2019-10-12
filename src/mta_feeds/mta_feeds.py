@@ -20,7 +20,7 @@ def merge_stops(df, data_dir='../../data/mta_info'):
 
     full_path  = os.path.join(data_dir, 'stops.txt')
     temp_df = pd.read_csv(full_path)
-as
+
     new_df = df.merge(temp_df, how='left', left_on='stop', right_on='stop_id')
 
     del temp_df 
