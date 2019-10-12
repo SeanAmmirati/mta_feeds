@@ -50,4 +50,5 @@ MANIFEST
 .venv*/
 
 # text data files 
-.txt
+*.txt
+.vscode/settings.json
