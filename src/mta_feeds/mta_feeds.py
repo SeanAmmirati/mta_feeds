@@ -34,6 +34,14 @@ def download_rideinf():
     with ZipFile(BytesIO(temp_r.content)) as zipped:
         zipped.extractall('../../data/mta_info') 
 
+def generate_dataframe(feed_ids=[1, 26, 16, 21, 2, 11, 31, 36, 51], 
+                       data_dir='../../data/mta_info', 
+                       req_str=req_str):
+    df = run_through_trains(feed_ids)
+    df = merge_stops(df, data_dir)
+    return df
+
+
 
 def run_through_trains(feed_ids=[1, 26, 16, 21, 2, 11, 31, 36, 51]):
     df_list = []
@@ -123,10 +131,5 @@ def melt_arrival_df(df):
 
 
 if __name__ == '__main__':
-    feed = feed_message(req_str)
-    d = convert_to_dict(feed)
-    df = create_arrival_df(d)
-    melted = df.melt(id_vars=['trip', 'stop', 'train'], 
-                     var_name='type', 
-                     value_vars=['arrival', 'departure'])
-
+    df = generate_dataframe(data_dir='data/mta_info')
+    print(df)
