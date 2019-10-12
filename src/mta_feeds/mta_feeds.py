@@ -123,7 +123,7 @@ def melt_arrival_df(df):
 
 
 if __name__ == '__main__':
-    feed = feed_message()
+    feed = feed_message(req_str)
     d = convert_to_dict(feed)
     df = create_arrival_df(d)
     melted = df.melt(id_vars=['trip', 'stop', 'train'], 
