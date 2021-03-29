@@ -35,7 +35,7 @@ protobuf==3.10.0
 protobuf3-to-dict==0.1.5
 ptyprocess==0.6.0
 pycparser==2.19
-Pygments==2.4.2
+Pygments==2.7.4
 pylint==2.4.2
 pyOpenSSL==19.0.0
 pyrsistent==0.15.4
